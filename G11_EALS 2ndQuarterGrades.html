@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .box {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px black;
+        text-align: center;
+        width: 500px;
+        height: 300px;
+      }
+      h1 {
+        color: green;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        width: 200px;
+      }
+      input[type="submit"] {
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        background-color: green;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .result {
+        color: green;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>San Jose Integrated School Senior High School Portal</h1>
+      <form>
+        <input type="text" placeholder="Enter ID number">
+        <input type="submit" value="View Grades">
+      </form>
+      <div class="result">
+        <p id="output">Earth and Life Science (SY 2022-2023)</p>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const output = document.querySelector("#output");
+      const grades = {
+        "126653100019": "83",
+      "126336110008": "80",
+      "126723130075": "81", 
+      "126721100023": "You have lacking requirements, contact sir Glenn ASAP!",
+      "126839120034": "93",
+      "133351100009": "90", 
+      "126721110035": "You have lacking requirements, contact sir Glenn ASAP!", 
+      "126721100058": "85", 
+      "126721110043": "80", 
+      "126721110047": "81", 
+      "126723110033": "82", 
+      "126719120390": "97", 
+      "126721100136": "81", 
+      "126721100141": "82", 
+      "126721110097": "80", 
+      "126721110098": "85", 
+      "126721080066": "96", 
+      "126721110110": "81", 
+      "126721150052": "95", 
+      "126721150054": "91",
+"126719120414": "93",
+"126665110003": "92",
+"126717110005": "85",
+"200003110004": "97",
+"126721110016": "91",
+"126723110009": "92",
+"126723100003": "You have lacking requirements, contact sir Glenn ASAP!",
+"126721110022": "96",
+"126721110026": "81",
+"126659050038": "88",
+"126721110038": "95",
+"126721110044": "91",
+"126721120023": "89",
+"126721090049": "You have lacking requirements, contact sir Glenn ASAP!",
+"126721100097": "81",
+"126694100028": "You have lacking requirements, contact sir Glenn ASAP!",
+"126723110009": "You have lacking requirements, contact sir Glenn ASAP!",
+"126721110054": "97",
+"126721100024": "92",
+"126721110093": "94",
+"500680S1": "90",
+"500680S2": "83",
+      };
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const id = event.target[0].value;
+        if (grades[id]) {
+          output.innerHTML = `Your grade is ${grades[id]}`;
+        } else {
+          output.innerHTML = "Incorrect ID number";
+        }
+      });
+    </script>
+  </body>
+</html>
